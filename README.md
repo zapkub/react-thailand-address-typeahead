@@ -25,6 +25,10 @@ export default () => (
     <div>
         <AddressFormTypeahead
          onAddressSelected={(addressObject) => console.log(addressObject)} 
+         districtLabel={'ตำบล'} 
+         amphoeLabel={'อำเภอ'}
+         provinceLabel={'จังหวัด'}
+         zipcodeLabel={'รหัสไปรษณีย์'}
         />
     </div>
 )

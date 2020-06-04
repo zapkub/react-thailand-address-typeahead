@@ -8,7 +8,13 @@ import '../src/styles.css';
 storiesOf('Component', module)
   .add('montage', () => (
     <div style={{ width: 350 }}>
-      <AddressForm onAddressSelected={action('onSelectedAdress')} />
+      <AddressForm 
+        onAddressSelected={action('onSelectedAdress')} 
+        districtLabel={'ตำบล'} 
+        amphoeLabel={'อำเภอ'}
+        provinceLabel={'จังหวัด'}
+        zipcodeLabel={'รหัสไปรษณีย์'}
+      />
       <code>{'<AddressForm onAddressSelected={action(\'onSelectedAdress\')} />'}</code>
     </div>
   ))
