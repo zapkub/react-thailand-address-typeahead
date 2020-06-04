@@ -10,6 +10,10 @@ type AddressFormInputPropType = {
         p: string;
         z: string;
     };
+    districtLabel: string;
+    amphoeLabel: string;
+    provinceLabel: string;
+    zipcodeLabel: string;
     onAddressSelected: (addresObject) => void;
     renderResult: (data) => React.Component;
 }
@@ -33,10 +37,10 @@ class AddressForm extends React.Component {
         Object.keys(fieldsEnum).map((key) => {
           let name;
           switch (fieldsEnum[key]) {
-            case 'd': name = 'ตำบล'; break;
-            case 'a': name = 'อำเภอ'; break;
-            case 'p': name = 'จังหวัด'; break;
-            case 'z': name = 'รหัสไปรษณีย์'; break;
+            case 'd': name = this.props.districtLabel || 'ตำบล'; break;
+            case 'a': name = this.props.amphoeLabel || 'อำเภอ'; break;
+            case 'p': name = this.props.provinceLabel || 'จังหวัด'; break;
+            case 'z': name = this.props.zipcodeLabel || 'รหัสไปรษณีย์'; break;
             default: name = ''; break;
           }
           return (
