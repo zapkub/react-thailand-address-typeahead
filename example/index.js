@@ -20,7 +20,7 @@ storiesOf('Component', module)
         </div>
         <AddressForm onAddressSelected={address => setResult(address)} />
       </div>
-      ));
+    ));
     return (<div>
       <WithStateComponent />
       <code>
@@ -42,5 +42,31 @@ storiesOf('Component', module)
         onAddressSelected={action('onSelectedAdress')}
       />
     </div>
-  ));
+  ))
+  .add('set value', () => (
+    <div style={{ width: 350 }}>
+      <AddressForm
+        values={{
+          a: 'คลองสาน',
+          d: 'คลองต้นไทร',
+          p: 'กรุงเทพมหานคร',
+          z: '10600',
+        }}
+        onAddressSelected={action('onSelectedAdress')}
+      />
+      <code>
+        {`
+          <AddressForm
+            values={{
+              a: 'คลองสาน',
+              d: 'คลองต้นไทร',
+              p: 'กรุงเทพมหานคร',
+              z: '10600',
+            }}
+            onAddressSelected={action('onSelectedAdress')}
+          />
+        `}
+      </code>
+    </div>
+  ))
 
