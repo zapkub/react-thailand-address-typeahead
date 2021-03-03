@@ -37,7 +37,7 @@ const AddressTypeaheadComponent = (props: AddressInputType) => {
 };
 
 const AddressTypeahead: Component<AddressInputType> = compose(
-  withState('searchStr', 'setSearchStr', ''),
+  withState('searchStr', 'setSearchStr', ({ value = '' }) => value),
   lifecycle({
     componentWillReceiveProps(nextProps) {
       if (nextProps.value !== this.props.value) {
